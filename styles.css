@@ -1,0 +1,180 @@
+/* styles.css */
+
+html, body {
+    scroll-behavior: smooth;
+    min-width: 200px;
+    
+}
+
+/* Header */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+}
+
+.header-name {
+    flex: 1;
+    padding-right: 5%;
+}
+
+/* Default Menu */
+
+.menu-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.menu-buttons a {
+    padding: 8px 16px;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    background-color: black;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu-buttons a:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Menu if width <= 800px */
+
+.menu-icon {
+    font-size: 24px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    .menu-buttons {
+        display: none;
+    }
+
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: black;
+        border-radius: 8px;
+        padding: 10px;
+        list-style: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .dropdown-menu li {
+        margin: 5px 0;
+    }
+
+    .dropdown-menu li a {
+        color: white;
+        text-decoration: none;
+        padding: 8px 16px;
+        display: block;
+        font-weight: bold;
+    }
+
+    .dropdown-menu li a:hover {
+        background-color: white;
+        color: black;
+    }
+
+    .dropdown-menu.show {
+        display: block;
+    }
+}
+
+.menu-icon::after {
+    display: none;
+}
+
+/* Jumbotron */
+#jumbotron {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+#jumbotron-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(40%);
+}
+
+.image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 54px;
+    font-weight: 500;
+    /*font-family: Georgia, 'Times New Roman', Times, serif;*/
+    color: rgb(255, 255, 255);
+    z-index: 1;
+}
+
+#about{
+    border: none;
+    border-radius: 1px;
+    padding: 30px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 80%;
+    margin-top: 20px;
+    box-shadow: 0px 0px 4px 9px rgba(237,237,237,1);
+}
+#about img{
+    max-width: 200px;
+    max-height: 200px;
+}
+
+#resume{
+    border: none;
+    border-radius: 1px;
+    padding: 30px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 80%;
+    margin-top: 20px;
+    box-shadow: 0px 0px 4px 9px rgba(237,237,237,1);
+}
+
+#resume h2, #p-resume{
+    text-align: center;
+}
+
+#portfolio{
+    border: none;
+    border-radius: 1px;
+    padding: 30px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 80%;
+    margin-top: 20px;
+    box-shadow: 0px 0px 4px 9px rgba(237,237,237,1);
+}
+
+#portfolio h2, #p-resume{
+    text-align: center;
+}
