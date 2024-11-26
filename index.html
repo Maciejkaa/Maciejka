@@ -1,130 +1,325 @@
-<!-- Mateus Vladyslav Litvinovic EEf-23 -->
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
-              rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
-              crossorigin="anonymous">
-        <link rel="stylesheet" href="styles.css">
-        <title>First Page</title>
-    </head>
-    <body>
-        <!-- Header -->
-        <header class="header">
-            <div class="header-name">
-                <h2>Maciejka</h2>
-            </div>
-
-            <!-- Regular Nav -->
-            <div class="menu-buttons">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#resume">Resume</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#services">Services</a>
-            </div>
-
-            <!-- Dropdown -->
-            <div class="dropdown d-md-none">
-                <button class="menu-icon dropdown-toggle" onclick="toggleDropdown()">☰</button>
-                <ul class="dropdown-menu" id="dropdownMenu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#resume">Resume</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#services">Services</a></li>
-                </ul>
-            </div>
-        </header>
-
-        <!-- Jumbotron -->
-        <div class="jumbotron jumbotron-fluid" id="jumbotron">
-            <img src="images/jumbotron-dark.jpg" id="jumbotron-image">
-            <div class="image-text">I am Maciejka</div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+    <script src="js_code.js"></script>
+    <title>Responsive Portfolio</title>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-name">
+            <h2>Maciejka</h2>
         </div>
 
-        <!-- Sections -->
-        <div class="container container-fluid" id="about">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <img src="images/profile.jpg">
+        <!-- Desktop Navigation -->
+        <div class="menu-buttons d-none d-md-flex">
+            <a href="#jumbotron">Home</a>
+            <a href="#about">About</a>
+            <a href="#resume">Resume</a>
+            <a href="#portfolio">Portfolio</a>
+            <a class="dark-mode-button" onclick="darkmode()">◑</a>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div class="dropdown d-md-none">
+            <button class="menu-icon dropdown-toggle" onclick="toggleDropdown()">☰</button>
+            <ul class="dropdown-menu" id="dropdownMenu">
+                <li><a href="#jumbotron">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a class="dark-mode-button" onclick="darkmode()">◑</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Jumbotron -->
+    <div id="jumbotron">
+        <img src="images/jumbotron-dark.jpg" id="jumbotron-image" alt="Jumbotron Background">
+        <div class="image-text">I am Maciejka</div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="container my-5">
+        <div class="row">
+            <!-- Left Column: Profile Image, Info List, and Skills -->
+            <div class="col-md-6 d-flex flex-column">
+                <!-- Profile and List Row -->
+                <div class="d-flex align-items-start mb-4">
+                    <!-- Profile Image -->
+                    <img src="images/profile.jpg" alt="Profile Picture" class="img-fluid me-3" style="max-width: 300px;">
+                    <!-- Personal Info List -->
+                    <ul class="list-unstyled mb-0">
+                        <li><p><b>Name:</b> Maciejka</p></li>
+                        <li><p><b>Profile:</b> Electrical Engineer</p></li>
+                        <li><p><b>Email:</b> maciejka.maciejka@gmail.com</p></li>
+                        <li><p><b>Phone:</b> +371 8099321</p></li>
+                    </ul>
+                </div>
+                <!-- Progress Bars -->
+                <div>
+                    <h3 class="mb-3">Skills</h3>
+                    <!-- Skill HTML -->
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>HTML</span>
+                            <span>100%</span>
                         </div>
-                        <div class="col-sm-6">
-                            <p><b>Name: </b>Maciejka</p>
-                            <p><b>Profile: </b>Electrical Engineer</p>
-                            <p><b>Email: </b>maciejka.maciejka@gamil.com</p>
-                            <p><b>Phone: </b>+3718099321</p>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
 
-                    
+                    <!-- Skill CSS -->
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>CSS</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill JavaScript -->
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>JavaScript</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Photoshop -->
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Photoshop</span>
+                            <span>55%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-6">
-                    <h2>About</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Vestibulum a luctus nunc, vehicula egestas lacus. In id commodo
-                    augue, non interdum leo. Nunc vel scelerisque odio. Phasellus
-                    sed pulvinar sem, eu consequat nisi. In quis suscipit arcu,
-                    quis laoreet urna. Nullam blandit lacus non libero venenatis,
-                    eu bibendum ligula condimentum. Praesent efficitur volutpat 
-                    nisi eu accumsan.</p>
+            </div>
+
+            <!-- Right Column: About Text -->
+            <div class="col-md-6">
+                <h2 class="mb-4 border-bottom pb-2">About Me</h2>
+                <p>
+                    Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, 
+                    accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a pellentesque nec, 
+                    egestas non nisi. Nulla porttitor accumsan tincidunt.
+                </p>
+                <p>
+                    Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis 
+                    porttitor volutpat. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
+                </p>
+                <p>
+                    Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resume Section -->
+     <div id="resume" class="container my-5">
+        <div class="row">
+            <h2 class="mb-4">Resume</h2>
+            <p id="after-h2">Necessitabitus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            
+            <div class="col-md-6 d-flex flex-column">
+                <h3>Sumary</h3>
+                <div id="timeline">
+                    <div class="timeline-item">
+                        <p id="info">Maciejka</p>
+                        <p><i>
+                            Innovative and deadline-driven Graphic Designer with 3+ years of 
+                            experience designing and developing user-centered digital/print
+                            marketing material form initial concept to final, polished deliverable.
+                        </i></p>
+                        <ul>
+                            <li>Portland par 127, Orlando, FL</li>
+                            <li>+371 8099321</li>
+                            <li>maciejka.maciejka@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <h3>Education</h3>
+                <div id="timeline">    
+                    <div class="timeline-item">
+                        <p id="info">Master of Fine Arts & Graphic Design</p>
+                        <p><strong>2015 - 2016</strong></p>
+                        <p><i>Rochester Institute of Technology, Rochester, NY</i></p>
+                        <p>
+                            Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit.
+                            Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend
+                        </p>
+                    </div>
+                    <div class="timeline-item">
+                        <p id="info">Bachelor of Fine Arts & Graphic Design</p>
+                        <p><strong>2010 - 2014</strong></p>
+                        <p><i>Rochester Institute of Technology, Rochester, NY</i></p>
+                        <p>
+                            Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit.
+                            Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 d-flex flex-column">
+                <h3>Professional Experience</h3>
+                <div id="timeline"> 
+                    <div class="timeline-item">
+                        <p id="info">Senior Graphic Design Specialist</p>
+                        <p><strong>2019 - Present</strong></p>
+                        <p><i>Experion, New York, NY</i></p>
+                        <ul>
+                            <li>Lead in design, developement, and implementation of the graphic, layout, and production communication materials</li>
+                            <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project</li>
+                            <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
+                            <li>Oversee the efficient use of production project budgets ranging from $2000 - $25000</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <p id="info">Graphic Design Specialist</p>
+                        <p><strong>2017 - 2018</strong></p>
+                        <p><i>Stepping Stone Advertising, New York, NY</i></p>
+                        <ul>
+                            <li>Developed numerous marketing programs (logos, brochures, infographics, presentations and advertisements)</li>
+                            <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
+                            <li>Recommended and consulted with clients on the most approptiate graphic design</li>
+                            <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="container container-fluid" id="resume">
-            <h2>Resume</h2>
-            <p id="p-resume">Vestibulum a luctus nunc, vehicula egestas lacus</p>
-            <h4>Summary</h4>
-            <div class="container container-fluid">
-                <p>MACIEJKA</p>
-                <p><i>Neque porro quisquam est qui dolorem 
-                    ipsum quia dolor sit amet, consectetur, adipisci velit...</i></p>
-                <ul>
-                    <li>Address 000, City, Country</li>
-                    <li>+439893010938</li>
-                    <li>email.email@email.com</li>
-                </ul>    
+     </div>
+
+
+
+    <!-- Portfolio Section -->
+    <div id="portfolio" class="container my-5">
+        <div class="row">
+            <h2 class="mb-4">Portfolio</h2>
+            <p id="after-h2">Necessitabitus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+
+            <div class="menu-buttons-portfolio d-flex justify-content-center mb-4">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="solar">Solar</button>
+                <button class="filter-btn" data-filter="wind">Wind</button>
+                <button class="filter-btn" data-filter="water">Water</button>
+                <button class="filter-btn" data-filter="other">Other</button>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column">
+                <img src="images/gallery_1.png" id="solar">
+                <div class="overlay">
+                    <h5>Heading</h5>
+                    <p>Paragraph text</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column">
+                <img src="images/gallery_2.png" id="other">
+                <div class="overlay">
+                    <h5>Heading</h5>
+                    <p>Paragraph text</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column">
+                <img src="images/gallery_3.png" id="other">
+                <div class="overlay">
+                    <h5>Heading</h5>
+                    <p>Paragraph text</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column">
+                <img src="images/gallery_4.png" id="wind">
+                <div class="overlay">
+                    <h5>Heading</h5>
+                    <p>Paragraph text</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column">
+                <img src="images/gallery_5.png" id="water">
+                <div class="overlay">
+                    <h5>Heading</h5>
+                    <p>Paragraph text</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column">
+                <img src="images/gallery_6.png" id="solar">
+                <div class="overlay">
+                    <h5>Heading</h5>
+                    <p>Paragraph text</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column">
+                <img src="images/gallery_7.png" id="wind">
+                <div class="overlay">
+                    <h5>Heading</h5>
+                    <p>Paragraph text</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column">
+                <img src="images/gallery_8.png" id="other">
+                <div class="overlay">
+                    <h5>Heading</h5>
+                    <p>Paragraph text</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column">
+                <img src="images/gallery_9.png" id="water">
+                <div class="overlay">
+                    <h5>Heading</h5>
+                    <p>Paragraph text</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column">
+                <img src="images/gallery_10.png" id="solar">
+                <div class="overlay">
+                    <h5>Heading</h5>
+                    <p>Paragraph text</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column">
+                <img src="images/gallery_11.png" id="water">
+                <div class="overlay">
+                    <h5>Heading</h5>
+                    <p>Paragraph text</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex flex-column">
+                <img src="images/gallery_12.png" id="wind">
+                <div class="overlay">
+                    <h5>Heading</h5>
+                    <p>Paragraph text</p>
+                </div>
             </div>
         </div>
-        <div class="container container-fluid" id="portfolio">
-            <h2>Portfolio</h2>
-            <p id="p-resume">Vestibulum a luctus nunc, vehicula egestas lacus</p>
-            <h4>Summary</h4>
-            <div class="container container-fluid">
-                <p>MACIEJKA</p>
-                <p><i>Neque porro quisquam est qui dolorem 
-                    ipsum quia dolor sit amet, consectetur, adipisci velit...</i></p>
-                <ul>
-                    <li>Address 000, City, Country</li>
-                    <li>+439893010938</li>
-                    <li>email.email@email.com</li>
-                </ul>    
-            </div>
+    </div>
+
+    <footer>
+        <div class="container d-flex" id="footer-content">
+            <p>Centered Footer Content</p>
         </div>
-        <div class="services" id="services">
-            <h2>Services</h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=Vaq_RwbjwUfqNl06"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <audio controls>
-                <source src="images/video.mp3" type="audio/mpeg">
-            </audio>
-            <video width="320" height="240" controls>
-                <source src="images/video2.mp4" type="video/mp4">
-            </video>
+        <button class="scroll-to-top">↑</button>
+    </footer>
 
 
-        </div>
 
-        <script>
-            function toggleDropdown() {
-                document.getElementById('dropdownMenu').classList.toggle('show');
-            }
-        </script>
-    </body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
 </html>
