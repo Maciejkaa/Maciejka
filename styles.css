@@ -368,7 +368,7 @@ h1, h2, h3, h4, h5, h6{
         flex-direction: column;
     }
 
-    #resume .col-md-6 {
+    #resume .col-md-6{
         max-width: 100%;
         margin-bottom: 20px;
         text-align: left;
@@ -486,17 +486,32 @@ h1, h2, h3, h4, h5, h6{
 footer {
     position: relative;
     text-align: center;
-    padding: 20px;
+    padding: 40px;
     background-color: #007bff;
     width: 100%;
-    height: 250px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
-/* Centered content inside footer */
 #footer-content {
-    display: relative;
-    justify-content: center;
-    bottom: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#footer-content .row:first-child {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+footer p {
+    color: #f9f9f9;
+    font-size: 18px;
+    margin: 0;
+    align-self: center;
 }
 
 /* Scroll-to-top button */
