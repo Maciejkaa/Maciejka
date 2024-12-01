@@ -22,6 +22,7 @@
             <a href="#about">About</a>
             <a href="#resume">Resume</a>
             <a href="#portfolio">Portfolio</a>
+            <a href="#contact-section">Contact</a>
             <a class="dark-mode-button" onclick="darkmode()">◑</a>
         </div>
 
@@ -33,6 +34,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#resume">Resume</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="contact">Contact</a></li>
                 <li><a class="dark-mode-button" onclick="darkmode()">◑</a></li>
             </ul>
         </div>
@@ -40,7 +42,7 @@
 
     <!-- Jumbotron -->
     <div id="jumbotron">
-        <img src="images/jumbotron-dark.jpg" id="jumbotron-image" alt="Jumbotron Background">
+        <!--<img src="images/jumbotron-dark.jpg" id="jumbotron-image" alt="Jumbotron Background">-->
         <div class="image-text">I am Maciejka</div>
     </div>
 
@@ -136,7 +138,7 @@
             <p id="after-h2">Necessitabitus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
             
             <div class="col-lg-6 col-md-12 col-sm-12 d-flex flex-column">
-                <h3>Sumary</h3>
+                <h3>Summary</h3>
                 <div id="timeline">
                     <div class="timeline-item">
                         <p id="info">Maciejka</p>
@@ -310,6 +312,68 @@
         </div>
     </div>
 
+    <!-- Contact -->
+
+    <div id="contact-section" class="container my-5">
+        <h2 class="mb-4">Contact</h2>
+        <p id="after-h2">Necessitabitus eius consectetur ex aliquid fuga eum quidem sint consectetur velit</p>
+
+        <div class="container my-5" id="contact-info-container">
+            <div class="row" id="contact-info-row">
+                <div class="col-lg-4 col-md-12 d-flex contact-info">
+                    <div class="image-wrapper">
+                        <img src="images/location.png" alt="Location Icon">
+                    </div>
+                    <div class="contact-info-text">
+                        <h4>Address</h4>
+                        <p>Boulevard Street 11, Vilnius, 10100</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 d-flex contact-info">
+                    <div class="image-wrapper">
+                        <img src="images/phone.png" alt="Phone Icon">
+                    </div>
+                    <div class="contact-info-text">
+                        <h4>Call Us</h4>
+                        <p>+370 854 21221</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 d-flex contact-info">
+                    <div class="image-wrapper">
+                        <img src="images/email.png" alt="Email Icon">
+                    </div>
+                    <div class="contact-info-text">
+                        <h4>Email Us</h4>
+                        <p>maciejka.maciejka@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container my-5" id="contact-form">
+            <form>
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="col">
+                        <input type="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Subject" required>
+                </div>
+                <div class="mb-3">
+                    <textarea rows="5" class="form-control" placeholder="Message" required></textarea>
+                </div>
+                <div class="button-wrapper">
+                    <button type="submit" class="btn btn-submit">Send Message</button>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+
     <!-- Footer -->
 
     <footer>
@@ -336,6 +400,6 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
