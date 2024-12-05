@@ -26,6 +26,10 @@ body.dark-mode #about{
     color: #f9f9f9;
 }
 
+body.dark-mode #about math {
+    border-color: #e9ecef;
+}
+
 body.dark-mode .menu-buttons a:hover{
     color: black !important;
 }
@@ -275,6 +279,16 @@ h1, h2, h3, h4, h5, h6{
 
 #about .d-flex img {
     margin-right: 15px;
+}
+
+#about math {
+    border: 1px solid #333;
+    border-radius: 20px;
+    max-width: 200px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow:rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive Adjustments */
@@ -651,29 +665,61 @@ footer {
     padding: 40px;
     background-color: #007bff;
     width: 100%;
-    height: 200px;
+    height: auto; /* Make height flexible to fit content */
     display: flex;
-    flex-direction: none;
+    flex-direction: column; /* Ensure the footer contents stack vertically */
     align-items: center;
-    justify-content: space-between;
 }
 
 #footer-content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
+/* Icons row: ensure icons stay side-by-side */
 #footer-content .row:first-child {
     display: flex;
-    margin-bottom: 20px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
 }
 
+#footer-content .col-sm-4 {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer-content .row img {
+    max-width: 50px;
+    height: auto;
+}
+
+@media (max-width: 600px) {
+    #footer-content .row img {
+        max-width: 40px;
+    }
+}
+
+/* Footer text styles */
 footer p {
     color: #f9f9f9;
     font-size: 18px;
     margin: 0;
     align-self: center;
+    text-align: center;
+}
+
+/* Clock styles */
+#Clock_Display {
+    color: #e9ecef;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 0;
 }
 
 /* Scroll-to-top button */
@@ -699,3 +745,4 @@ footer p {
     background-color: #555;
     transform: scale(1.1);
 }
+

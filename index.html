@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link rel="icon" href="images/inst_icon_footer.png" type="image/inst_icon_footer">
     <link rel="stylesheet" href="styles.css">
     <script src="js_code.js"></script>
-    <title>Responsive Portfolio</title>
+    <title>Portfolio</title>
 </head>
 <body>
     <!-- Header -->
@@ -127,6 +128,54 @@
                 <p>
                     Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim.
                 </p>
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <!-- Simbolis σ -->
+                    <mi>σ</mi>
+                    <!-- Lygybės ženklas -->
+                    <mo>=</mo>
+                    <!-- Kvadratinė šaknis -->
+                    <msqrt>
+                        <!-- Dalyba (1/N) -->
+                        <mfrac>
+                            <!-- Skaitiklis -->
+                            <mn>1</mn>
+                            <!-- Vardiklis -->
+                            <mi>N</mi>
+                        </mfrac>
+                        <mrow>
+                            <!-- Sumos operatorius -->
+                            <munderover>
+                                <!-- Suma ženklas (∑) -->
+                                <mo>∑</mo>
+                                <!-- Apačioje rodoma informacija (i = 1) -->
+                                <mrow>
+                                    <mi>i</mi>
+                                    <mo>=</mo>
+                                    <mn>1</mn>
+                                </mrow>
+                                <!-- Viršuje rodoma informacija (N) -->
+                                <mi>N</mi>
+                            </munderover>
+                            <!-- Atidaromas skliaustas -->
+                            <mi>(</mi>
+                            <!-- Elementas x su indeksu i (x_i) -->
+                            <msub>
+                                <mi>x</mi>
+                                <mi>i</mi>
+                            </msub>
+                            <!-- Atimtis -->
+                            <mo>−</mo>
+                            <!-- Vidurkis μ -->
+                            <mi>μ</mi>
+                            <!-- Pakėlimas kvadratu (²) -->
+                            <msup>
+                                <!-- Uždaromas skliaustas -->
+                                <mi>)</mi>
+                                <mn>2</mn>
+                            </msup>
+                        </mrow>
+                    </msqrt>
+                </math>
             </div>
         </div>
     </div>
@@ -378,24 +427,38 @@
 
     <footer>
         <div class="container d-flex" id="footer-content">
+            <!-- Row with icons -->
             <div class="row">
                 <div class="col-sm-4">
-                    <a href="https://www.facebook.com/vilniustech/" target="_blank"><img src="images/fb_icon_footer.png"></a>
+                    <a href="https://www.facebook.com/vilniustech/" target="_blank">
+                        <img src="images/fb_icon_footer.png" alt="Facebook">
+                    </a>
                 </div>
                 <div class="col-sm-4">
-                    <a href="https://www.instagram.com/vilniustech/" target="_blank"><img src="images/inst_icon_footer.png"></a>
+                    <a href="https://www.instagram.com/vilniustech/" target="_blank">
+                        <img src="images/inst_icon_footer.png" alt="Instagram">
+                    </a>
                 </div>
                 <div class="col-sm-4">
-                    <a href="https://www.youtube.com/channel/UCW4UCKB80NlgnD7SBJZMAlQ" target="_blank"><img src="images/yt_icon_footer.png"></a>
+                    <a href="https://www.youtube.com/channel/UCW4UCKB80NlgnD7SBJZMAlQ" target="_blank">
+                        <img src="images/yt_icon_footer.png" alt="YouTube">
+                    </a>
                 </div>
             </div>
             <br>
+            <!-- Clock Display -->
+            <div id="Clock_Display"></div>
+            <br>
+            <!-- Footer text -->
             <div class="row">
                 <p>Mateuš Vladyslav Litvinovič</p>
             </div>
         </div>
+        <!-- Scroll-to-top button -->
         <button class="scroll-to-top">↑</button>
     </footer>
+    
+    
 
 
 
