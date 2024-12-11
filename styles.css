@@ -78,6 +78,18 @@ body.dark-mode #contact-form textarea {
     color: white;
 }
 
+body.dark-mode #contact-form .fa-star {
+    color: #2c2c2c !important;
+}
+
+body.dark-mode #contact-form .fa-star:hover {
+    color: #007bff !important;
+}
+
+body.dark-mode #contact-form .fa-star.selected {
+    color: #007bff !important;
+}
+
 h1, h2, h3, h4, h5, h6{
     font-family: 'Raleway', sans-serif;
     color: #212529;
@@ -644,11 +656,10 @@ h1, h2, h3, h4, h5, h6{
     background-color: #007bff;
     color: white;
     width: fit-content;
-    padding: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 10px 30px;
     border-radius: 30px;
     transition: background-color 0.3s ease-in-out;
+    border: none;
 }
 
 #contact-form button:hover {
@@ -659,6 +670,61 @@ h1, h2, h3, h4, h5, h6{
     text-align: center;
 }
 
+#contact-form label {
+    display: block;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+#contact-form .stars {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+#contact-form .fa-star {
+    font-size: 28px;
+    color: #ccc;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+#contact-form .fa-star:hover,
+#contact-form .fa-star.selected {
+    color: #007bff;
+}
+
+#contact-form .fa-star.selected:hover {
+    opacity: 0.6;
+}
+
+.red {
+    color: red;
+    font-weight: bold;
+}
+
+.orange {
+    color: orange;
+    font-weight: bold;
+}
+
+.green {
+    color: green;
+    font-weight: bold;
+}
+
+#contact-form #output {
+    text-align: center;
+}
+
+@media (max-width: 425px) {
+    #contact-form .fa-star {
+        font-size: 24px;
+    }
+}
+
 /* Footer */
 
 footer {
@@ -667,9 +733,9 @@ footer {
     padding: 40px;
     background-color: #007bff;
     width: 100%;
-    height: auto; /* Make height flexible to fit content */
+    height: auto;
     display: flex;
-    flex-direction: column; /* Ensure the footer contents stack vertically */
+    flex-direction: column;
     align-items: center;
 }
 
@@ -680,7 +746,6 @@ footer {
     width: 100%;
 }
 
-/* Icons row: ensure icons stay side-by-side */
 #footer-content .row:first-child {
     display: flex;
     justify-content: center;
@@ -706,7 +771,6 @@ footer {
     }
 }
 
-/* Footer text styles */
 footer p {
     color: #f9f9f9;
     font-size: 18px;
@@ -715,7 +779,7 @@ footer p {
     text-align: center;
 }
 
-/* Clock styles */
+/* Clock */
 #Clock_Display {
     color: #e9ecef;
     text-align: center;

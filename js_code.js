@@ -105,3 +105,116 @@ document.addEventListener("DOMContentLoaded", function () {
     DigitalClock();
 });
 
+// Dynamically generate star ratings
+
+let formData = {};
+
+function createStars() {
+    document.querySelectorAll('.stars').forEach((starContainer) => {
+        for (let i = 1; i <= 10; i++) {
+            const star = document.createElement('span');
+            star.classList.add('fa', 'fa-star');
+            star.dataset.value = i;
+            star.addEventListener('click', function () {
+                updateStars(starContainer, i);
+            });
+            starContainer.appendChild(star);
+        }
+    });
+}
+
+function updateStars(container, value) {
+    container.querySelectorAll('.fa-star').forEach((star) => {
+        star.classList.toggle('selected', star.dataset.value <= value);
+    });
+    container.dataset.rating = value;
+}
+
+function saveData() {
+    const form = document.getElementById('form');
+    const data = {
+        firstName: form.querySelector('#input-name').value,
+        lastName: form.querySelector('#input-surname').value,
+        email: form.querySelector('#input-email').value,
+        phone: form.querySelector('#input-tel').value,
+        address: form.querySelector('#input-address').value,
+    };
+
+    if (!data.firstName || !data.lastName || !data.email || !data.phone || !data.address) {
+        alert('Please fill in all the fields.');
+        return;
+    }
+
+    if (!validateEmail(data.email)) {
+        alert('Invalid email address!');
+        return;
+    }
+    if (!validatePhone(data.phone)) {
+        alert('Invalid phone number!');
+        return;
+    }
+    if (data.address.trim() === '') {
+        alert('Address cannot be empty!');
+        return;
+    }
+
+    const questions = ['Question_1', 'Question_2', 'Question_3', 'Question_4', 'Question_5'];
+    const scores = questions.map((q) => {
+        const container = document.querySelector(`.stars[data-question="${q}"]`);
+        return Number(container.dataset.rating || 0);
+    });
+
+    if (scores.includes(0)) {
+        alert('Please rate all aspects of the website.');
+        return;
+    }
+
+    formData = {
+        ...data,
+        ratings: questions.reduce((acc, q, i) => {
+            acc[q] = scores[i];
+            return acc;
+        }, {}),
+        averageScore: (scores.reduce((a, b) => a + b, 0) / scores.length).toFixed(2)
+    };
+
+    displayOutput(formData);
+}
+
+function displayOutput(data) {
+    const outputDiv = document.getElementById('output');
+    let averageScoreClass = 'red';
+    if (data.averageScore > 4 && data.averageScore <= 7) {
+        averageScoreClass = 'orange';
+    }
+    else if (data.averageScore > 7) {
+        averageScoreClass = "green";
+    }
+
+    outputDiv.innerHTML = `
+        <p><strong>Name:</strong> ${data.firstName}</p>
+        <p><strong>Surname:</strong> ${data.lastName}</p>
+        <p><strong>Email:</strong> ${data.email}</p>
+        <p><strong>Phone:</strong> ${data.phone}</p>
+        <p><strong>Address:</strong> ${data.address}</p>
+        ${Object.keys(data.ratings).map((q) => `<p><strong>${q.replace('_', ' ')}:</strong> ${data.ratings[q]}</p>`).join('')}
+        <p><strong>${data.firstName} ${data.lastName} (${data.email}):</strong> <span class="${averageScoreClass}">${data.averageScore}</span></p>
+    `;
+    console.log(data);
+}
+
+function validateEmail(email) {
+    const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/;
+    return re.test(email);
+}
+
+function validatePhone(phone) {
+    const re = /^\+?[0-9]{7,15}$/;
+    return re.test(phone);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    createStars();
+});
+
+
